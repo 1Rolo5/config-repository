@@ -1,10 +1,25 @@
+<<<<<<< HEAD
+spring:
+  application:
+    name: service-client
+  cloud:
+    config:
+      uri: http://localhost:8081
+      username: nttdata
+      password: nttd4t4
+=======
+
 server:
-  port: 8088
+  port: 8085
 eureka:
-  instance:
-    hostname: localhost
   client:
-    registryWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    service-url:
+      defaultZone: http://localhost:8082/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+>>>>>>> 2265152fc765a340c849259fe3aa8ba72967ffcb
+
