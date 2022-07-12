@@ -13,7 +13,7 @@ spring:
       discovery:
         locator:
           enabled: true
-      routes[0]:
+      routes[0][0]:
         - id: client-service
           uri: lb://CLIENT-SERVICE
           predicates:
