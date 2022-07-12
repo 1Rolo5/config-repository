@@ -19,7 +19,7 @@ spring:
           predicates:
             - Path=/business/**,/personnel/**
         - id: product-service
-          uri: lb://PRODUCT-SERVICE
+          uri: lb://SERVICE-PRODUCT
           predicates:
             - Path=/BankAccount/**,/credit/**,/producttype/**
         #- id: transaction-service
