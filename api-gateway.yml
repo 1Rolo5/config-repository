@@ -4,9 +4,17 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8082/eureka/
-spring:
+spring:  
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     gateway:
       discovery:
         locator:
           enabled: true
+      routes[0]:
+        - id: client-service
+          uri: lb://CLIENT-SERVICE
+          predicates:
+            - Path=/business/**,/personnel/**
