@@ -22,8 +22,8 @@ spring:
           uri: lb://SERVICE-PRODUCT
           predicates:
             - Path=/BankAccount/**,/producttype/**
-        #- id: transaction-service
-         # uri: lb://TRANSACTION-SERVICE
-          #predicates:
-           # - Path=/transaction/**
+        - id: transaction-service
+          uri: lb://SERVICE-TRANSACTION
+          predicates:
+           - Path=/transaction/**
 
